@@ -1,27 +1,33 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-//Address 地址结构体
-type Address struct {
-	Province string
-	City     string
+//Animal 动物
+type Animal struct {
+	name string
 }
 
-//User 用户结构体
-type User struct {
-	Name    string
-	Gender  string
-	Address //匿名结构体
+func (a *Animal) move() {
+	fmt.Printf("%s会动！\n", a.name)
+}
+
+//Dog 狗
+type Dog struct {
+	Feet    int8
+	*Animal //通过嵌套匿名结构体实现继承
+}
+
+func (d *Dog) wang() {
+	fmt.Printf("%s会汪汪汪~\n", d.name)
 }
 
 func main() {
-	var user2 User
-	user2.Name = "pprof"
-	user2.Gender = "女"
-	user2.Address.Province = "黑龙江"   //通过匿名结构体.字段名访问
-	user2.City = "哈尔滨"               //直接访问匿名结构体的字段名
-	fmt.Printf("user2=%#v\n", user2) //user2=main.User{Name:"pprof", Gender:"女", Address:main.Address{Province:"黑龙江", City:"哈尔滨"}}
+	d1 := &Dog{
+		Feet: 4,
+		Animal: &Animal{ //注意嵌套的是结构体指针
+			name: "乐乐",
+		},
+	}
+	d1.wang() //乐乐会汪汪汪~
+	d1.move() //乐乐会动！
 }
