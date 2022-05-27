@@ -2,35 +2,13 @@ package main
 
 import "fmt"
 
-//Animal 动物
-type Animal struct {
-	name string
-}
-
-func (a *Animal) move() {
-	fmt.Printf("%s会动！\n", a.name)
-}
-
-//Dog 狗
-type Dog struct {
-	Feet    int8
-	*Animal //通过嵌套匿名结构体实现继承
-}
-
-func (d *Dog) wang() {
-	fmt.Printf("%s会汪汪汪~\n", d.name)
-}
-
 func main() {
-	d1 := &Dog{
-		Feet: 4,
-		Animal: &Animal{ //注意嵌套的是结构体指针
-			name: "乐乐",
-		},
+	/* 定义局部变量 */
+	var a int = 10
+	/* 使用 if 语句判断布尔表达式 */
+	if a < 20 {
+		/* 如果条件为 true 则执行以下语句 */
+		fmt.Printf("a 小于 20\n")
 	}
-	d1.wang() //乐乐会汪汪汪~
-	d1.move() //乐乐会动！
-	fmt.Println("分支")
-	fmt.Println("差异")
-	fmt.Println("分支:dev")
+	fmt.Printf("a 的值为 : %d\n", a)
 }
