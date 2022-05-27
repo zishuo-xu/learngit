@@ -32,4 +32,5 @@ func main() {
 	d1.move() //乐乐会动！
 	fmt.Println("分支")
 	fmt.Println("差异")
+	fmt.Println("分支:dev")
 }
