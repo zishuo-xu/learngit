@@ -4,23 +4,26 @@ import (
 	"fmt"
 )
 
-type student struct {
+//Person 结构体
+type Person struct {
 	name string
-	age  int
+	age  int8
+}
+
+//NewPerson 构造函数
+func NewPerson(name string, age int8) *Person {
+	return &Person{
+		name: name,
+		age:  age,
+	}
+}
+
+//Dream Person做梦的方法
+func (p Person) Dream() {
+	fmt.Printf("%s的梦想是学好Go语言！\n", p.name)
 }
 
 func main() {
-	m := make(map[string]*student)
-	stus := []student{
-		{name: "pprof.cn", age: 18},
-		{name: "测试", age: 23},
-		{name: "博客", age: 28},
-	}
-
-	for _, stu := range stus {
-		m[stu.name] = &stu
-	}
-	for k, v := range m {
-		fmt.Println(k, "=>", v.name)
-	}
+	p1 := NewPerson("测试", 25)
+	p1.Dream()
 }
