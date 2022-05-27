@@ -4,26 +4,24 @@ import (
 	"fmt"
 )
 
-//Person 结构体
-type Person struct {
-	name string
-	age  int8
+//Address 地址结构体
+type Address struct {
+	Province string
+	City     string
 }
 
-//NewPerson 构造函数
-func NewPerson(name string, age int8) *Person {
-	return &Person{
-		name: name,
-		age:  age,
-	}
-}
-
-//Dream Person做梦的方法
-func (p Person) Dream() {
-	fmt.Printf("%s的梦想是学好Go语言！\n", p.name)
+//User 用户结构体
+type User struct {
+	Name    string
+	Gender  string
+	Address //匿名结构体
 }
 
 func main() {
-	p1 := NewPerson("测试", 25)
-	p1.Dream()
+	var user2 User
+	user2.Name = "pprof"
+	user2.Gender = "女"
+	user2.Address.Province = "黑龙江"   //通过匿名结构体.字段名访问
+	user2.City = "哈尔滨"               //直接访问匿名结构体的字段名
+	fmt.Printf("user2=%#v\n", user2) //user2=main.User{Name:"pprof", Gender:"女", Address:main.Address{Province:"黑龙江", City:"哈尔滨"}}
 }
