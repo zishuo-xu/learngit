@@ -1,14 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
-	/* 定义局部变量 */
-	var a int = 10
-	/* 使用 if 语句判断布尔表达式 */
-	if a < 20 {
-		/* 如果条件为 true 则执行以下语句 */
-		fmt.Printf("a 小于 20\n")
+	getSqrt := func(a float64) float64 {
+		return math.Sqrt(a)
 	}
-	fmt.Printf("a 的值为 : %d\n", a)
+	fmt.Println(getSqrt(4))
 }
