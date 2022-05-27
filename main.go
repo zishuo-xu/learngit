@@ -1,36 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
 
-//Animal 动物
-type Animal struct {
-	name string
+var wg sync.WaitGroup
+
+func hello(i int) {
+	defer wg.Done() // goroutine结束就登记-1
+	fmt.Println("Hello Goroutine!", i)
 }
-
-func (a *Animal) move() {
-	fmt.Printf("%s会动！\n", a.name)
-}
-
-//Dog 狗
-type Dog struct {
-	Feet    int8
-	*Animal //通过嵌套匿名结构体实现继承
-}
-
-func (d *Dog) wang() {
-	fmt.Printf("%s会汪汪汪~\n", d.name)
-}
-
 func main() {
-	d1 := &Dog{
-		Feet: 4,
-		Animal: &Animal{ //注意嵌套的是结构体指针
-			name: "乐乐",
-		},
+
+	for i := 0; i < 10; i++ {
+		wg.Add(1) // 启动一个goroutine就登记+1
+		go hello(i)
 	}
-	d1.wang() //乐乐会汪汪汪~
-	d1.move() //乐乐会动！
-	fmt.Println("分支")
-	fmt.Println("差异")
-	fmt.Println("分支:dev")
+	wg.Wait() // 等待所有登记的goroutine都结束
 }
