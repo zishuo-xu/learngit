@@ -1,0 +1,15 @@
+2022-06-01T15:59:55.852+0800	INFO	golang_study/main.go:14	连接成功
+2022-06-01T16:00:55.746+0800	INFO	golang_study/main.go:14	连接成功 host:127.0.0.1,port:6379
+2022-06-01T16:06:50.155+0800	INFO	golang_study/main.go:15	连接成功 host:127.0.0.1,port:6379
+2022-06-01T16:08:21.893+0800	INFO	golang_study/main.go:15	连接成功 host:127.0.0.1,port:6379
+2022-06-01T16:11:24.176+0800	INFO	golang_study/main.go:16	连接成功 host:127.0.0.1,port:6379
+2022-06-01T16:11:32.757+0800	INFO	golang_study/main.go:16	连接成功 host:127.0.0.1,port:6379
+2022-06-01T16:13:14.542+0800	INFO	golang_study/main.go:16	连接成功 host:127.0.0.1,port:6379
+2022-06-01T16:34:08.785+0800	INFO	golang_study/main.go:16	连接成功 host:127.0.0.1,port:6379
+2022-06-01T16:34:51.248+0800	INFO	golang_study/main.go:16	连接成功 host:127.0.0.1,port:6379
+2022-06-01T16:36:29.549+0800	INFO	golang_study/main.go:16	连接成功 host:127.0.0.1,port:6379
+2022-06-01T16:36:51.148+0800	INFO	golang_study/main.go:16	连接成功 host:127.0.0.1,port:6379
+2022-06-01T16:37:30.592+0800	INFO	golang_study/main.go:16	连接成功 host:127.0.0.1,port:6379
+2022-06-01T16:38:08.265+0800	INFO	golang_study/main.go:16	连接成功 host:127.0.0.1,port:6379
+2022-06-01T16:39:51.258+0800	INFO	golang_study/main.go:16	连接成功 host:127.0.0.1,port:6379
+2022-06-01T16:52:04.482+0800	INFO	golang_study/main.go:16	连接成功 host:127.0.0.1,port:6379
